@@ -1,5 +1,5 @@
 # GWOGA1
-genetic selection - the GWOGA codes, modified by origin GA
+genetic selection - the GWOGA codes, modified by https://github.com/renatoosousa/GeneticAlgorithmForFeatureSelection
 
 deap - the python tools used in GA
 

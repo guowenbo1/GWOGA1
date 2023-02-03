@@ -57,16 +57,9 @@ def Read15222(filePath):
 
 
 if __name__ == "__main__":
-    dataPath = 'voom_normalization_log2.csv'
     gse15222 = 'gse15222.csv'
-    gse1297 = 'GSE1297.csv'
-    gse199225 = 'GSE199225.csv'
-    gse203206 = 'gse203206.csv'
     # geneName, geneData, label = ReadData(dataPath)
-    # geneName,geneData,label = ReadData(gse15222)
-    geneName, geneData, label = ReadData(gse1297)
-    # geneName, geneData, label = ReadData(gse199225)
-    # geneName, geneData, label = ReadData(gse203206)
+    geneName,geneData,label = ReadData(gse15222)
     geneDataTrain,geneDataTest,labelTrain,labelTest = train_test_split(
         geneData,label,shuffle=True,train_size=0.8)
 
@@ -83,7 +76,7 @@ if __name__ == "__main__":
     # writer = pd.ExcelWriter(excelName)
     for i in num:
         print(i)
-        excelName = 'com_num/GSE199225/' + str(i) + '/model validation num.xlsx'
+        excelName = 'com_num/GSE15222/' + str(i) + '/model validation num.xlsx'
         for k in op:
             print(k)
             scoring = ['accuracy', 'precision_macro', 'recall_macro', 'f1']
@@ -93,7 +86,7 @@ if __name__ == "__main__":
             GAGWO = GAGWO.fit(geneData, label)
             print('GAFS has been done')
         # 存
-            name = 'com_num/GSE199225/' + str(i) + '/'+k +'.pickle'
+            name = 'com_num/GSE15222/' + str(i) + '/'+k +'.pickle'
             with open(name,'wb') as fw:
                 pickle.dump(GAGWO,fw)
 
